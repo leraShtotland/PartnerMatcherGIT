@@ -428,14 +428,17 @@ namespace PartnerMatcher.View
             activityArea = createAct.actArea;
             activityKind = createAct.actKind;
             activityId = createAct.actId;
-            HideFileds();
-            BlackAllLabels();
-            InitFileds();
-            kindTextBox.Text = activityKind;
-            areaInfoTextBox.Text = activityArea;
-            additionalInfoTextBox.IsEnabled = true;
-            List<string> kindFields = busLogic.GetKindFields(activityKind);
-            ShowRelevantFileds(kindFields);
+            if (activityArea != "" && activityKind != "" && activityId > 0)
+            {
+                HideFileds();
+                BlackAllLabels();
+                InitFileds();
+                kindTextBox.Text = activityKind;
+                areaInfoTextBox.Text = activityArea;
+                additionalInfoTextBox.IsEnabled = true;
+                List<string> kindFields = busLogic.GetKindFields(activityKind);
+                ShowRelevantFileds(kindFields);
+            }
         }
 
         #region InputsEvents

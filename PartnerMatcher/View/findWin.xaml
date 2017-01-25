@@ -1,0 +1,50 @@
+﻿<Window x:Class="PartnerMatcher.View.findWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        mc:Ignorable="d"
+        Title="findWin" Height="641" Width="723.333">
+    <Grid Margin="0,0,-4.667,-0.333">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/pics/find.jpg" Stretch="UniformToFill" Opacity="0.3" AlignmentY="Top"/>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Left" Height="105" Orientation="Horizontal"  VerticalAlignment="Top" Width="285">
+            <StackPanel Width="140" Margin="0,0,5,47">
+                <Label x:Name="labelKind" Content="Partner for"/>
+                <ComboBox x:Name="comboBoxKind" SelectionChanged="comboBoxKind_SelectionChanged"/>
+            </StackPanel>
+            <StackPanel Width="140" Margin="0,0,0,47">
+                <Label x:Name="labelArea" Content="Area"/>
+                <ComboBox x:Name="comboBoxArea" SelectionChanged="comboBoxArea_SelectionChanged"/>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="button" Content="find" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="336,28,0,0" Click="button_Click"/>
+
+        <Label Content="No records found." x:Name="lblCount" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFE10000" Margin="255,289,246.667,271.333" Width="218"/>
+
+        <DataGrid x:Name="gvData" SelectionMode="Single" FontSize="10"  IsReadOnly="True" CanUserAddRows="False" ItemsSource="{Binding}"
+                            ScrollViewer.CanContentScroll="True" 
+      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                      
+      ScrollViewer.HorizontalScrollBarVisibility="Visible" Margin="10,90,9.667,326.333" SelectionChanged="gvData_SelectionChanged">
+        </DataGrid>
+
+
+
+
+        <DataGrid Name="gvDataFree" SelectionMode="Single" FontSize="10" CanUserResizeColumns="True" CanUserSortColumns="True" IsReadOnly="True" ItemsSource="{Binding}"  CanUserAddRows="False"
+                           ScrollViewer.CanContentScroll="True" 
+      ScrollViewer.VerticalScrollBarVisibility="Visible"
+                          RowDetailsVisibilityMode="Visible"
+      ScrollViewer.HorizontalScrollBarVisibility="Visible" Margin="10,344,9.667,129.333">
+        </DataGrid>
+
+
+        <Button x:Name="appBtn" Content="Apply for this activity" HorizontalAlignment="Left" Margin="90,530,0,0" VerticalAlignment="Top" Width="125" Height="40" Click="button1_Click_req"/>
+        <Button x:Name="butDet" Content="View Details" HorizontalAlignment="Left" Margin="255,530,0,0" VerticalAlignment="Top" Width="95" Height="40" Click="button1_Click_1"/>
+        <Button x:Name="button_Copy" Content="Advanced Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="436,28,0,0" Click="AdvancedSearch_Click"/>
+
+    </Grid>
+</Window>

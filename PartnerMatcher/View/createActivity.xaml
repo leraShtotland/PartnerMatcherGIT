@@ -1,0 +1,58 @@
+﻿<Window x:Class="PartnerMatcher.View.createActivity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        mc:Ignorable="d"
+        Title="Create Activity" Height="370" Width="368.333">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/pics/createActivity.jpg" Stretch="UniformToFill" Opacity="0.3" AlignmentY="Top"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left" Height="250" Margin="25,20,0,0" VerticalAlignment="Top" Width="310" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label x:Name="AreaLabel" Grid.Column="0"  Content="* Choose an Area:"/>
+                <ComboBox x:Name="areaBox" Grid.Column="1"  Width="165" Margin="10,0,0,0">
+                    <ComboBoxItem Content="Center" />
+                    <ComboBoxItem Content="Jerusalem" />
+                    <ComboBoxItem Content="North" />
+                    <ComboBoxItem Content="South" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label x:Name="kindLabel" Grid.Column="0"  Content="* Choose Kind:"/>
+                <ComboBox x:Name="kindBox" Grid.Column="1"  Width="165" Margin="27,0,0,0">
+                    <ComboBoxItem Content="Dates" />
+                    <ComboBoxItem Content="Real Estate" />
+                    <ComboBoxItem Content="Sport" />
+                    <ComboBoxItem Content="Trips" />
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  Margin="0,0,0,10" >
+                <Label x:Name="activityNameLabel" Grid.Column="0" Content="* Activity Name:"/>
+                <TextBox x:Name="activityName" Grid.Column="1" TextWrapping="Wrap" Width="165" Margin="20,0,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"  Margin="0,0,0,10" >
+                <Label x:Name="headActLabel" Grid.Column="0" Content="* Head of activity Email:" />
+                <TextBox x:Name="headActBox" Grid.Column="1" TextWrapping="Wrap" Width="165" Margin="10,0,0,0"/>
+            </StackPanel>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="addMembersbutton" Content="Want To Add More Members?" HorizontalAlignment="Center" VerticalAlignment="Center" Width="180" Height="22" Click="addMembersbutton_Click_1" Margin="5,0,0,0"/>
+            <StackPanel Orientation="Horizontal"  Margin="0,15,0,10" >
+                <Label x:Name="additionalLabel" Grid.Column="0" Content="Additional Info:" />
+                <TextBox x:Name="additionalBox" Grid.Column="1" TextWrapping="Wrap" Width="190" Height="60" Margin="10,0,0,0" ScrollViewer.CanContentScroll="True"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="3" Grid.Column="1" x:Name="createActbutton" Content="Create Activity" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="105" Height="30" Click="create_Click"/>
+        <Label x:Name="mandatoryLabel" Grid.Row="3" Grid.Column="0" Content="* mandatory fileds" Margin="0,37,0,0" FontSize="10"/>
+
+    </Grid>
+</Window>

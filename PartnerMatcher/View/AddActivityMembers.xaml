@@ -1,0 +1,23 @@
+﻿<Window x:Class="PartnerMatcher.View.AddActivityMembers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher.View"
+        mc:Ignorable="d"
+        Title="Add Members To Activity" Height="200" Width="300">
+    <Grid Margin="0,0,0.333,-0">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/pics/addprofile2.jpg" Stretch="UniformToFill" Opacity="0.3" AlignmentY="Top"/>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Left" Height="135" Margin="15,25,0,0" VerticalAlignment="Top" Width="260" RenderTransformOrigin="0.5,0.5">
+            <StackPanel Height="35" Orientation="Horizontal">
+                <Label x:Name="memberLbl" Content="Member Email: "/>
+                <TextBox x:Name="nameTextBox" TextWrapping="Wrap" Text="" Margin="5,0,0,5" Height="22" Width="160"/>
+            </StackPanel>
+            <CheckBox x:Name="isHead" Content=" Is Head Member?"  Margin="10,0,0,0"></CheckBox>
+            <Button x:Name="addBtn" Content="Add Member" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="AddBtn_Click"/>
+            <Button x:Name="finishBtn" Content="I'm Done Adding" HorizontalAlignment="Center" Margin="10,22,0,0" VerticalAlignment="Top" Width="110" Click="finishBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
